@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "B站学习模式",
+  "version": "1.0.0",
+  "description": "净化B站干扰项，提供学习首页与自定义壁纸。",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["*://*.bilibili.com/*"],
+  "action": {
+    "default_title": "B站学习模式",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.jpg",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.jpg"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.jpg",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.jpg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "js": ["content/study.js"],
+      "css": ["content/study.css"],
+      "run_at": "document_start"
+    }
+  ]
+}

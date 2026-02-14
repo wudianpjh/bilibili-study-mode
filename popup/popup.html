@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./popup.css" />
+  <title>B站学习模式</title>
+</head>
+<body>
+  <div class="card">
+    <div class="row">
+      <div class="title">学习模式</div>
+      <label class="switch">
+        <input id="enabled" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="section">
+      <div class="section-title">壁纸</div>
+
+      <div class="row2">
+        <input id="wallpaperUrl" placeholder="粘贴图片 URL（jpg/png/webp）" />
+        <button id="saveUrl">保存URL</button>
+      </div>
+
+      <div class="row2">
+        <input id="wallpaperFile" type="file" accept="image/*" />
+        <button id="clearWallpaper" class="ghost">清除壁纸</button>
+      </div>
+
+      <div class="hint">建议小图（例如 &lt; 2MB），dataURL 太大会影响同步速度。</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">净化项</div>
+
+      <label class="check">
+        <input id="hideMatch" type="checkbox" />
+        <span>隐藏【赛事】</span>
+      </label>
+      <label class="check">
+        <input id="hideCreator" type="checkbox" />
+        <span>隐藏【创作中心】</span>
+      </label>
+      <label class="check">
+        <input id="hideSubmit" type="checkbox" />
+        <span>隐藏【投稿】</span>
+      </label>
+      <label class="check">
+        <input id="hideExtraLeftNav" type="checkbox" />
+        <span>隐藏【番剧/直播/游戏中心/下载客户端/会员购/漫画】</span>
+      </label>
+    </div>
+
+    <div class="section">
+      <div class="section-title">快捷打开</div>
+      <div class="btns">
+        <button data-nav="home">主页</button>
+        <button data-nav="dynamic">动态</button>
+        <button data-nav="fav">收藏夹</button>
+        <button data-nav="history">历史</button>
+      </div>
+      <div class="hint">收藏夹会自动从 cookie 读取 mid，跳转到 space/favlist。</div>
+    </div>
+  </div>
+
+  <script src="./popup.js"></script>
+</body>
+</html>

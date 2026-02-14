@@ -1,5 +1,3 @@
-# bilibili-study-mode
-专为复习设计的 B 站环境净化插件，提供极简学习首页与自定义壁纸功能。
 # 📺 Bilibili Study Mode | B站学习模式
 
 > **"Stay focused, Study hard."** > 这是一款专为处于复习阶段的学子打造的浏览器扩展，旨在将 B 站从“时间黑洞”转化为“学习利器”。

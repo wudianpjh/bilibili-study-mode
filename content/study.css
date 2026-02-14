@@ -1,0 +1,161 @@
+/* 只在“学习首页”预隐藏，避免闪一下原站 */
+html.bs-prehide body {
+  opacity: 0 !important;
+}
+
+/* ========== 学习首页：覆盖原站，只保留我们自己的 root ========== */
+html.bs-home body {
+  margin: 0 !important;
+}
+html.bs-home body > *:not(#bs-root) {
+  display: none !important;
+}
+
+#bs-root {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    "PingFang SC", "Microsoft YaHei", sans-serif;
+
+  /* 默认背景（无模糊） */
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.82));
+  background-size: cover;
+  background-position: center;
+}
+#bs-root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.30);
+  /* 关键：不使用 backdrop-filter，避免“整页糊掉”体验 */
+}
+
+#bs-root .bs-top {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  gap: 12px;
+}
+#bs-root .bs-brand {
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  user-select: none;
+  opacity: 0.95;
+}
+#bs-root .bs-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#bs-root .bs-main {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px 42px;
+}
+
+#bs-root .bs-clock {
+  text-align: center;
+  margin-bottom: 18px;
+}
+#bs-root .bs-time {
+  font-size: clamp(52px, 7vw, 92px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1.05;
+}
+#bs-root .bs-date {
+  margin-top: 10px;
+  opacity: 0.86;
+  font-size: 14px;
+}
+
+#bs-root .bs-search {
+  width: min(900px, 92vw);
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#bs-root .bs-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+}
+#bs-root .bs-search input::placeholder {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+#bs-root .bs-quick {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.bs-btn {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.38);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.bs-btn:active {
+  transform: scale(0.98);
+}
+
+/* ========== 视频页净化：隐藏右侧推荐等 + 居中 ========== */
+html.bs-on.bs-video #reco_list,
+html.bs-on.bs-video .recommend-list,
+html.bs-on.bs-video .right-container,
+html.bs-on.bs-video .video-page-card,
+html.bs-on.bs-video #v_upinfo,
+html.bs-on.bs-video .up-panel-container,
+html.bs-on.bs-video .upinfo,
+html.bs-on.bs-video .upinfo-container,
+html.bs-on.bs-video .rec-list,
+html.bs-on.bs-video .recommend,
+html.bs-on.bs-video .next-play,
+html.bs-on.bs-video .bili-video-card,
+html.bs-on.bs-video .bpx-player-sidebar,
+html.bs-on.bs-video .video-container__right,
+html.bs-on.bs-video aside,
+html.bs-on.bs-video .player-right {
+  display: none !important;
+}
+
+html.bs-on.bs-video .video-container,
+html.bs-on.bs-video .video-container-v1,
+html.bs-on.bs-video .container,
+html.bs-on.bs-video .main-container,
+html.bs-on.bs-video #app {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+html.bs-on.bs-video #playerWrap,
+html.bs-on.bs-video .player-wrap,
+html.bs-on.bs-video .bpx-player-container,
+html.bs-on.bs-video .bilibili-player,
+html.bs-on.bs-video #bilibili-player {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
